@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>chech usia</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        color: #333;
+      }
+
+      .container {
+        box-shadow: 0px 0px 5px black;
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #eaeaea;
+      }
+      .container,
+      label,
+      input,
+      button {
+        display: block;
+      }
+
+      .container h1 {
+        margin-bottom: 30px;
+      }
+
+      .container #check {
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 2px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+
+      .container #proses,
+      #clear {
+        background-color: #333;
+        color: whitesmoke;
+        font-size: 15px;
+        padding: 6px;
+        border: 1px solid black;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 2px;
+        margin-bottom: 15px;
+      }
+
+      .container #proses:hover,
+      #clear:hover {
+        background-color: black;
+      }
+
+      .container #hasil {
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hare Tinan</h1>
+      <label for="check">Hatama Ita Bo'ot Nia Tinan Moris!</label>
+      <input type="number" placeholder="Exemplu 2006" id="check" />
+      <button id="proses">Proses</button>
+      <button type="clear" id="clear">Hamos</button>
+      <p id="hasil"></p>
+    </div>
+
+    <script>
+      const proses = document.querySelector("#proses");
+
+      proses.addEventListener("click", function () {
+        const checkInput = document.querySelector("#check");
+        const checkValue = checkInput.value;
+        const now = new Date().getFullYear();
+        const result = now - checkValue;
+        const hasil = document.querySelector("#hasil");
+        hasil.innerHTML = "Ita Bot Nia Tinan Agora Mak" + " " + result;
+      });
+
+      const clear = document.querySelector("#clear");
+      clear.addEventListener("click", function () {
+        alert("Favor Prense Uluk Lai Ita Bo'ot Nia Tinan no Halo NIa Prosesu");
+      });
+    </script>
+  </body>
+</html>
